@@ -93,3 +93,5 @@ def delete_diary(diary_id):
     return {
         "details": f'Diary entry {entry.diary_id} successfully deleted'
     }
+
+    # testing
