@@ -74,3 +74,16 @@ def create_reflex():
             "videos": new_reflex.videos
         }
     }, 201
+
+# Delete a reflex
+@reflex_bp.route("/<reflex_id>", methods=["DELETE"])
+def delete_reflex(reflex_id):
+    reflex = validate_reflex(reflex_id)
+
+    db.session.delete(reflex)
+    db.session.commit()
+
+
+    return {
+        "details": f'Reflex {reflex.reflex_id} successfully deleted'
+    }
