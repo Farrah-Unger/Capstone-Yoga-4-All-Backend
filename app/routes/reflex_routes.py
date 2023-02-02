@@ -87,3 +87,25 @@ def delete_reflex(reflex_id):
     return {
         "details": f'Reflex {reflex.reflex_id} successfully deleted'
     }
+
+# update one reflex (education and or videos update)
+@reflex_bp.route("/<reflex_id>", methods=["PUT"])
+def update_reflex(reflex_id):
+    reflex = validate_reflex(reflex_id)
+
+    request_body =request.get_json()
+    reflex.education = request_body["education"]
+    reflex.videos = request_body["videos"]
+
+    reflex.reflex_id = int(reflex.reflex_id) 
+    
+    db.session.commit()
+    
+    return {
+        "reflex": {
+            "reflex_id": reflex.reflex_id,
+            "title": reflex.title,
+            "education": reflex.education,
+            "videos": reflex.videos,
+        }
+    }
