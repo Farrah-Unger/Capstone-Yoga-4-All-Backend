@@ -15,7 +15,7 @@ def get_all_reflexes():
     for reflex in reflexes:
         reflex_response.append(
             {
-            "id": reflex.reflex_id,
+            "reflex_id": reflex.reflex_id,
             "title": reflex.title,
             }
         )
