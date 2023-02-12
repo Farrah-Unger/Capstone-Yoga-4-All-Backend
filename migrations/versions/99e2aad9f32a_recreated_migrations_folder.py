@@ -1,8 +1,8 @@
-"""created models and routes
+"""recreated migrations folder
 
-Revision ID: 396887605a5f
+Revision ID: 99e2aad9f32a
 Revises: 
-Create Date: 2023-01-30 11:10:04.163757
+Create Date: 2023-02-12 12:01:17.454481
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '396887605a5f'
+revision = '99e2aad9f32a'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,6 +23,7 @@ def upgrade():
     sa.Column('title', sa.String(), nullable=True),
     sa.Column('videos', sa.ARRAY(sa.String()), nullable=True),
     sa.Column('education', sa.String(), nullable=True),
+    sa.Column('image', sa.Text(), nullable=True),
     sa.PrimaryKeyConstraint('reflex_id')
     )
     op.create_table('diary',
