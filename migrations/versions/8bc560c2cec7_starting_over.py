@@ -1,8 +1,8 @@
-"""recreated migrations folder
+"""starting over
 
-Revision ID: 99e2aad9f32a
+Revision ID: 8bc560c2cec7
 Revises: 
-Create Date: 2023-02-12 12:01:17.454481
+Create Date: 2023-02-12 12:20:46.792866
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '99e2aad9f32a'
+revision = '8bc560c2cec7'
 down_revision = None
 branch_labels = None
 depends_on = None
