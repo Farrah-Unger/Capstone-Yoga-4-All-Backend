@@ -16,8 +16,7 @@ def get_all_reflexes():
         reflex_response.append(
             {
             "reflex_id": reflex.reflex_id,
-            "title": reflex.title,
-            "image": reflex.image
+            "title": reflex.title
             }
         )
 
@@ -33,7 +32,6 @@ def get_one_reflex(reflex_id):
             "reflex_id": reflex.reflex_id,
             "title": reflex.title,
             "videos": reflex.videos,
-            "image": reflex.image,
             "education": reflex.education
         }
     }
@@ -60,7 +58,6 @@ def create_reflex():
             reflex_id=request_body["reflex_id"], 
             title=request_body["title"],
             education=request_body["education"],
-            image=request_body["image"],
             videos=request_body["videos"]
         )
     except KeyError:
@@ -74,7 +71,6 @@ def create_reflex():
             "reflex_id": new_reflex.reflex_id,
             "title": new_reflex.title,
             "education": new_reflex.education,
-            "image" : new_reflex.image,
             "videos": new_reflex.videos
 
         }
@@ -101,7 +97,6 @@ def update_reflex(reflex_id):
     request_body =request.get_json()
     reflex.education = request_body["education"]
     reflex.videos = request_body["videos"]
-    reflex.image = request_body["image"]
 
     reflex.reflex_id = int(reflex.reflex_id) 
     
@@ -112,7 +107,6 @@ def update_reflex(reflex_id):
             "reflex_id": reflex.reflex_id,
             "title": reflex.title,
             "education": reflex.education,
-            "image" : reflex.image,
             "videos": reflex.videos,
         }
     }

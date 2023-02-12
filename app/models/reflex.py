@@ -5,5 +5,4 @@ class Reflex(db.Model):
     title = db.Column(db.String) #ForeignKey?
     videos=db.Column(db.ARRAY(db.String))
     education = db.Column(db.String)
-    image = db.Column(db.Text)
     diaries = db.relationship("Diary", back_populates="reflex") #lazy=True
