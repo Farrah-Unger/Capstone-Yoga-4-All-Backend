@@ -1,8 +1,8 @@
-"""starting over
+"""newly deloyed backend
 
-Revision ID: 8bc560c2cec7
+Revision ID: d80814a5fdc8
 Revises: 
-Create Date: 2023-02-12 12:20:46.792866
+Create Date: 2023-02-12 12:54:09.475133
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '8bc560c2cec7'
+revision = 'd80814a5fdc8'
 down_revision = None
 branch_labels = None
 depends_on = None
